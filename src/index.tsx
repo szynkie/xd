@@ -5,10 +5,10 @@ import './index.css'
 
 import NavBar from "./components/NavBar/NavBar"
 
-function BookList(){
+function StartApp(){
   return (
   <NavBar/>
   )
 }
 
-ReactDom.render(<BookList/>,document.getElementById('root'))
+ReactDom.render(<StartApp/>,document.getElementById('root'))

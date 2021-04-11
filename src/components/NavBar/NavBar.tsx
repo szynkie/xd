@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './NavBar.css'
+import logo from '../../logo.png'
 
 class NavBar extends Component {
     state = {clicked: false}
@@ -38,12 +39,12 @@ const MenuItems = [
         cName: 'nav-links'
     },
      {
-        title: 'Msg',
+        title: 'Messages',
         url: '#',
         cName: 'nav-links'
     },
      {
-        title: 'Not',
+        title: 'Notifications',
         url: '#',
         cName: 'nav-links'
     },
