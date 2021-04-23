@@ -10,7 +10,7 @@
 }
 
 .navbar-logo {
-  color: #fff;
+  color: #999;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
@@ -49,10 +49,9 @@
 }
 
 .menu-icon {
-  display: none;
 }
 
 .company-logo {
-  height: 100%;
+  height: 90%;
   width: auto;
 }
