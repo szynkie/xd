@@ -11,17 +11,23 @@
 
 .navbar-logo {
   color: #999;
+  display: flex;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
+  margin-right: 1rem;
 }
 
-.fa-react {
+.fa-times {
   margin-left: 0.5rem;
-  font-size: 1.6rem;
+}
+
+.fa-sort-down {
+  margin-left: 0.5rem;
 }
 
 .nav-menu {
+  color: #fff;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-gap: 10px;
@@ -48,10 +54,17 @@
   color: #fff;
 }
 
-.menu-icon {
-}
-
 .company-logo {
   height: 90%;
   width: auto;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
 }

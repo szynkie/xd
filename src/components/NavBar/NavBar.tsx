@@ -13,17 +13,16 @@ class NavBar extends Component {
         return(
             <nav className="NavBarItems">
                 <img src={logo} alt="" className="company-logo"/>
-                <h1 className="navbar-logo">Menu<i className="fab fa-react"></i></h1>
-                <div className="menu-icon" onClick={this.handleClick}>
-                    <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
-                </div>
+                <h1 className="navbar-logo" onClick={this.handleClick}><i className="fas fa-home"></i>Menu
+                    <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-sort-down'}></i>
+                </h1>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item, index) => {
                         return (
                             <li key={index}>
-                                <a className={item.cName} href={item.url}>
-                                {item.title}
-                                </a>
+                                
+                                <i className={item.cName} > </i>
+                                
                             </li>
                         )
                     })}
@@ -37,17 +36,17 @@ const MenuItems = [
     {
         title: 'Home',
         url: '#',
-        cName: 'nav-links'
+        cName: 'fas fa-home'
     },
      {
         title: 'Messages',
         url: '#',
-        cName: 'nav-links'
+        cName: 'fas fa-inbox'
     },
      {
         title: 'Notifications',
         url: '#',
-        cName: 'nav-links'
+        cName: 'fas fa-bell'
     },
 ]
 
