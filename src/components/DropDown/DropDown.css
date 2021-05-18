@@ -3,16 +3,19 @@
   position: absolute;
   top: 30px;
   list-style: none;
-  text-align: start;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0px 1px 10px #999;
 }
 
 .dropdown-menu li {
-  background: #c6ced6;
+  background: #ffffff;
+
   cursor: pointer;
 }
 
 .dropdown-menu li:hover {
-  background: #879fb8;
+  background: #6d76f7;
 }
 
 .dropdown-menu-clicked {

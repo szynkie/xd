@@ -1,22 +1,22 @@
 export const MenuItems =[
     {
         title: 'Marketing',
-        path: '/marketing',
+        path: '/#',
         cName:'fas fa-home'
     },
     {
         title: 'Consulting',
-        path: '/consultion',
+        path: '/#',
         cName:'fas fa-phone'
     },
     {
         title: 'Publications',
-        path: '/test1',
+        path: '/#',
         cName:'fas fa-envelope'
     },
     {
         title: 'Entities',
-        path: '/test2',
+        path: '/#',
         cName:'fas fa-building'
     },
 ]

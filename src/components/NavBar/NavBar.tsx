@@ -3,6 +3,7 @@ import './NavBar.css'
 import {Link} from 'react-router-dom'
 import DropDown from '../DropDown/DropDown'
 import logo from '../../logo.png'
+import Search from "../Search/Search";
 
 class NavBar extends Component {
     state = {clicked: false}
@@ -16,16 +17,15 @@ class NavBar extends Component {
         return(
             <nav className="NavBarItems">
                 <img src={logo} alt="" className="company-logo"/>
-                <h1 className="navbar-logo" onClick={this.handleClick}><i className="fas fa-home"></i>Menu<i className={this.state.clicked ? 'fas fa-times' : 'fas fa-sort-down'}></i>
-                <i onClick={this.handleClick} className={this.state.clicked ? 'dropdown-menu-clicked' : 'dropdown-menu'}><DropDown /></i>
-                </h1>
+                <h1 className="navbar-logo" onClick={this.handleClick}><i className="fas fa-home"/>Menu<i className={this.state.clicked ? 'fas fa-times' : 'fas fa-sort-down'}/>
+                <i onClick={this.handleClick} className={this.state.clicked ? 'dropdown-menu' : 'dropdown-menu-clicked'}><DropDown /></i></h1>
+                <Search/>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item, index) => {
                         return (
-                            <li key={index}>
-                                <Link to={item.url}>
-                                    <i className={item.cName} > </i>
-                                </Link>
+                            <li key={index} className="nav-links">
+                                <i className={item.cName} />
+                                <Link to={item.url}/>
                             </li>
                         )
                     })}
