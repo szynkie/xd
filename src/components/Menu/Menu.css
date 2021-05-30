@@ -1,9 +1,0 @@
-.imgt {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  box-sizing: border-box;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-}

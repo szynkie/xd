@@ -1,10 +1,17 @@
-import React, { Component } from 'react'
-import './Menu.css'
+import React, { Component } from 'react';
 
-class Menu extends Component{
-render(){
-    return(
-        <img className="imgt" src="https://uybor.uz/borless/uybor/img/user-images/user_no_photo_300x300.png" alt="" />
-    )
-}}
+import UserCard from "./UserCard/UserCard";
+import styles from "./Menu.module.scss";
+
+class Menu extends Component {
+
+    render() {
+        return (
+            <aside className={styles.Menu}>
+                <UserCard/>
+            </aside>
+        );
+    }
+}
+
 export default Menu;
