@@ -4,13 +4,13 @@ import styles from "./ActionButton.module.scss";
 import cx from 'classnames';
 import { ImSearch } from "react-icons/im";
 import { IconType } from 'react-icons';
-import { Post } from './../../../utils/IRest';
+import { IPost } from './../../../utils/Rest';
 
 type P = {
     className: string,
     text: string,
     icon: IconType,
-    actions: Array<Post>,
+    actions: Array<IPost>,
     onClick: Function
 }
 

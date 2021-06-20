@@ -9,26 +9,25 @@ import {
 
 import Menu from './components/Menu/Menu';
 import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
 import React from 'react';
 
 function App() {
   return (
-    <Router>
+   <Router>
       <div className="app">
         <Navbar />
         <div className="app-window">
           <Menu />
           <main>
             <Switch>
-              <Route path="/about">
-                about
-          </Route>
-              <Route path="/users">
-                users
-          </Route>
               <Route path="/">
-                home
-          </Route>
+                <Home/>
+              </Route>
+              <Route path="/about">
+              </Route>
+              <Route path="/users">
+              </Route>
             </Switch>
           </main>
         </div>

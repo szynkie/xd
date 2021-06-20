@@ -49,7 +49,7 @@ class Search extends Component<P, S> {
 
         return (
             <div className={cx(styles.Search, this.props.customClass)}>
-                <input ref={this.searchInput} type="text" value={this.state.value} placeholder={'Search Legalcluster'} onChange={(ev) => this.onChange(ev)} />
+                <input ref={this.searchInput} type="text" value={this.state.value} placeholder={'Search'} onChange={(ev) => this.onChange(ev)} />
                 <button type="button" className={cx(styles.SearchButton)} onClick={(ev) => this.props.onSearchClick(ev)}>
                     <ImSearch className={styles.SearchIcon} />
                 </button>
