@@ -66,6 +66,27 @@ class RestService {
 
         return commentsWithRel;
     }
+
+    private _statusToText(status: number): void {
+        
+        switch (status) {
+            case 200: console.info("Ok"); break;
+            default: console.error("Error")
+        }
+    }
+
+    setUserProfile(id: number, data: IUser): void {
+        fetch(`${API}/users/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        })
+            .then((response) => {
+                return this._statusToText(response.status);
+            })
+    }
 }
 
 
