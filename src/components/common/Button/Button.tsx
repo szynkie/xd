@@ -1,6 +1,7 @@
 import React, { Component, RefObject } from 'react';
 
 import { IconType } from 'react-icons';
+import { LightenDarkenColor } from '../../../utils/colorUtils';
 import cx from 'classnames';
 import styles from "./Button.module.scss";
 
@@ -10,7 +11,9 @@ type P = {
     icon: IconType,
     iconOnly: boolean,
     disabled: boolean,
-    className: string
+    border: boolean,
+    className: string,
+    theme?: string
 }
 
 class Button extends Component<P, {}> {
@@ -22,6 +25,7 @@ class Button extends Component<P, {}> {
         iconOnly: false,
         className: null,
         disabled: false,
+        border: false,
         onClick: () => null
     }
 
@@ -42,14 +46,26 @@ class Button extends Component<P, {}> {
     }
 
     render() {
-        const { label, icon, iconOnly, className, disabled } = this.props;
+        const { label, icon, iconOnly, className, disabled, border, theme } = this.props;
         const Icon = icon;
-        
+        let colors = {
+            backgroundColor: '',
+            color: '',
+            borderColor: ''
+        };
+        if (theme) {
+            colors = {
+                backgroundColor: theme,
+                color: LightenDarkenColor(theme, -90),
+                borderColor: border ? LightenDarkenColor(theme, -90) : ''
+            }    
+        }
+
         return (
             <div className={cx(styles.ButtonContainer, className)} >
-                <button disabled={disabled} aria-label={label} type="button" className={cx(styles.Button, iconOnly ? styles.ButtonIcon : null)} onClick={(ev) => this.onClick(ev)}>
-                    {Icon ? <Icon /> : null}
-                    {label}
+                <button style={colors} disabled={disabled} aria-label={label} type="button" className={cx(styles.Button, iconOnly ? styles.ButtonIcon : null, border ? styles.ButtonBorder : null)} onClick={(ev) => this.onClick(ev)}>
+                    {Icon ? <Icon style={{color: colors.color}} /> : null}
+                    <p style={{color: colors.color}}>{label}</p>
                     <span ref={this.ripple} className={styles.ripple}></span>
                 </button>
             </div>

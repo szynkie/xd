@@ -5,6 +5,7 @@ import NavbarActions from './NavbarActions/NavbarActions';
 import Search from '../common/Search/Search';
 import logo from './../../assets/react-logo.png';
 import styles from "./Navbar.module.scss";
+import DropdownMenu from './DropdownMenu/DropdownMenu';
 
 class Navbar extends Component {
 
@@ -13,6 +14,7 @@ class Navbar extends Component {
             <header className={styles.Navbar}>
                 <div className={styles.NavbarMenu}>
                     <Link to="/" className={styles.NavbarLogo}><img src={logo} alt="Website logo" /></Link>
+                    <DropdownMenu/>
                 </div>
                 <Search customClass={styles.searchBar} />
                 <NavbarActions />

@@ -20,6 +20,11 @@
     font-size: $icon-size-02;
     flex-shrink: 0;
     margin-right: $spacing-02;
+    transition: transform 0.24s;
+  }
+
+  > p {
+    margin: 0;
   }
 
   &:hover {
@@ -42,6 +47,20 @@
     animation: ripple 600ms linear;
     border-radius: 50%;
     background-color: rgba($active, 0.25);
+  }
+
+  &.ButtonBorder {
+    border: 2px solid $fontColor;
+    height: 1.5rem;
+
+    &:focus {
+      border-color: $active;
+      outline: 0;
+    }
+
+    &.ButtonIcon {
+      border-radius: 4px;
+    }
   }
 
   @keyframes ripple {

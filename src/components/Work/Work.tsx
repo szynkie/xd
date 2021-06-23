@@ -10,8 +10,8 @@ import WorkTile from '../common/WorkTile/WorkTile';
 import cx from 'classnames';
 import styles from "./Work.module.scss";
 
-const PAGE_SIZE = 10;
-const WORKS_LIMIT = 200;
+const PAGE_SIZE = 5;
+const WORKS_LIMIT = 60;
 
 type S = {
     works: Array<IComment> | null,
