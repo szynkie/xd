@@ -17,6 +17,7 @@
   border-radius: 4px;
   outline: 0;
   background: transparent;
+
   &Container {
     position: relative;
     margin-left: $spacing-04;
@@ -95,6 +96,7 @@
   &Icon {
     width: 2rem;
     border-radius: 50%;
+
     svg {
       margin: 0;
     }
@@ -114,11 +116,13 @@
     border: 0;
     border-radius: 4px;
     background: none;
+
     &:hover,
     &:focus {
       outline: 0;
       background: rgba($active, 0.1);
     }
+
     svg {
       font-size: $icon-size-03;
       margin-right: $spacing-03;

@@ -1,6 +1,6 @@
-import { IUser } from '../utils/Rest';
-import { Moment } from 'moment';
-import { newMomentDate } from './../utils/dateUtils';
+import {IUser} from '../utils/Rest';
+import {Moment} from 'moment';
+import {newMomentDate} from '../utils/dateUtils';
 
 export interface NotificationState {
     notifications: Notification[]
@@ -26,9 +26,7 @@ export const NotificationReducer = (state: NotificationState = initialState, act
     switch (action.type) {
         case NotificationActions.ADD: {
             (action.payload as any).time = newMomentDate(new Date());
-            if (true) {
-                return { ...state, notifications: [...state.notifications, action.payload] }
-            } else return state;
+            return {...state, notifications: [...state.notifications, action.payload]}
         }
         default:
             return state;

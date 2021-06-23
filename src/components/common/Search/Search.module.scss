@@ -4,6 +4,7 @@
   position: relative;
   overflow: hidden;
   height: 2rem;
+
   input {
     font-family: inherit;
     box-sizing: border-box;
@@ -14,10 +15,12 @@
     transition: border ease-in 0.14s;
     border: 1px solid #d3d3d3;
     border-radius: 4px;
+
     &:focus {
       border: 1px solid $active;
       outline: 0;
     }
+
     &::-webkit-search-cancel-button {
       -webkit-appearance: none;
     }
@@ -50,6 +53,7 @@
     border: none;
     border-radius: 0 4px 4px 0;
     background: transparent;
+
     &:focus {
       color: $active;
       border: 1px solid $active;

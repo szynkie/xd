@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { formatDate, getRandomDate } from '../../../utils/dateUtils';
-import { getRandomNumber, isPrime } from '../../../utils/mathUtils';
+import React, {Component} from 'react';
+import {formatDate, getRandomDate} from '../../../utils/dateUtils';
+import {getRandomNumber, isPrime} from '../../../utils/mathUtils';
 
-import { BiBuilding } from "react-icons/bi";
+import {BiBuilding} from "react-icons/bi";
 import Img from '../Img/Img';
-import { RiNewspaperLine } from "react-icons/ri";
+import {RiNewspaperLine} from "react-icons/ri";
 import cx from 'classnames';
 import styles from "./UserSignature.module.scss";
 
@@ -19,6 +19,14 @@ type P = {
 
 class UserSignature extends Component<P, {}> {
 
+    static defaultProps = {
+        className: null,
+        name: null,
+        company: null,
+        onWhiteBg: false,
+        imageSrc: null,
+        type: 'user'
+    }
     randomDate = getRandomDate();
     isCompany: boolean = false;
 
@@ -29,48 +37,39 @@ class UserSignature extends Component<P, {}> {
         }
     }
 
-    static defaultProps = {
-        className: null,
-        name: null,
-        company: null,
-        onWhiteBg: false,
-        imageSrc: null,
-        type: 'user'
-    }
-
     renderComType() {
         if (this.isCompany) {
             return <>
                 <div className={styles.Company}>
-                    <BiBuilding />
+                    <BiBuilding/>
                     <span>Company</span>
                 </div>
             </>
         }
 
         return <div className={styles.Company}>
-            <RiNewspaperLine />
+            <RiNewspaperLine/>
             <span>Contractor</span>
         </div>
     }
 
     contentSwitch() {
-        const { name, imageSrc, company, type } = this.props;
+        const {name, imageSrc, company, type} = this.props;
 
         switch (type) {
             case 'user':
                 return <>
                     <time>{formatDate(this.randomDate)}</time>
-                    <Img skeletonize className={styles.UserAvatar} src={imageSrc} alt={`${name} avatar`} />
+                    <Img skeletonize className={styles.UserAvatar} src={imageSrc} alt={`${name} avatar`}/>
                     <p>{name}</p>
                 </>;
             case 'company':
                 return <>
-                    <Img skeletonize className={styles.UserAvatar} src={imageSrc} alt={`${company} logo`} />
+                    <Img skeletonize className={styles.UserAvatar} src={imageSrc} alt={`${company} logo`}/>
                     <p>{company}</p>
-                    <div className={styles.separator}></div>
+                    <div className={styles.separator}/>
                     {this.renderComType()}
-                    <div className={styles.separator}></div>
+                    <div className={styles.separator}/>
                     <time>Updated {formatDate(this.randomDate, true)} by {name}</time>
                 </>;
         }
@@ -78,12 +77,12 @@ class UserSignature extends Component<P, {}> {
 
 
     render() {
-        const { className, onWhiteBg } = this.props;
+        const {className, onWhiteBg} = this.props;
 
         return (
             <div className={cx(className, styles.UserSignature, onWhiteBg ? styles.UserSignatureDark : null)}>
                 {this.contentSwitch()}
-            </div >
+            </div>
         );
     }
 }

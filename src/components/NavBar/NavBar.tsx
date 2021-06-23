@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import NavbarActions from './NavbarActions/NavbarActions';
 import Search from '../common/Search/Search';
 import logo from './../../assets/react-logo.png';
@@ -13,11 +13,11 @@ class Navbar extends Component {
         return (
             <header className={styles.Navbar}>
                 <div className={styles.NavbarMenu}>
-                    <Link to="/" className={styles.NavbarLogo}><img src={logo} alt="Website logo" /></Link>
+                    <Link to="/" className={styles.NavbarLogo}><img src={logo} alt="Website logo"/></Link>
                     <DropdownMenu/>
                 </div>
-                <Search customClass={styles.searchBar} />
-                <NavbarActions />
+                <Search customClass={styles.searchBar}/>
+                <NavbarActions/>
             </header>
         );
     }

@@ -1,4 +1,4 @@
-import React, { Component, RefObject } from 'react';
+import React, {Component, RefObject} from 'react';
 
 import cx from 'classnames';
 import styles from "./Field.module.scss";
@@ -69,17 +69,19 @@ class Field extends Component<P, S> {
     }
 
     render() {
-        const { label, type, placeholder, customClass, required, values } = this.props;
+        const {label, type, placeholder, customClass, required, values} = this.props;
         let dropdownValues;
-        if(values) {
+        if (values) {
             dropdownValues = values.map((v) => <option value={v}>{v}</option>);
         }
 
         return (
             <div className={cx(styles.Field, customClass)}>
                 {type === 'dropdown'
-                    ? <select value={this.state.value} onChange={(ev) => this.onSelectChange(ev)}>{dropdownValues}</select>
-                    : <input ref={this.input} required={required} type={type} value={this.state.value} placeholder={label || placeholder} onChange={(ev) => this.onChange(ev)} />}
+                    ? <select value={this.state.value}
+                              onChange={(ev) => this.onSelectChange(ev)}>{dropdownValues}</select>
+                    : <input ref={this.input} required={required} type={type} value={this.state.value}
+                             placeholder={label || placeholder} onChange={(ev) => this.onChange(ev)}/>}
             </div>
         );
     }

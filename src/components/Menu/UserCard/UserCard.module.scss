@@ -18,6 +18,7 @@
     width: 100%;
     padding-top: $spacing-01;
     border-radius: 4px;
+
     &:hover {
       background: rgba($active, 0.1);
     }
@@ -45,6 +46,7 @@
     border-top: 1px solid $border;
   }
 }
+
 .UserCardButtons {
   display: grid;
   align-items: center;
@@ -64,6 +66,7 @@
     color: $fontColor;
   }
 }
+
 .UserTransparent {
   display: flex;
   align-items: center;
@@ -74,6 +77,7 @@
 
   .Button {
     width: 100%;
+
     button {
       justify-content: flex-start;
       width: 100%;

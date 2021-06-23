@@ -1,6 +1,6 @@
-import { NotificationReducer } from './reducers/NotificationReducer';
-import { createStore } from 'redux';
+import {NotificationReducer} from './reducers/NotificationReducer';
+import {createStore} from 'redux';
 
-const createStoreThatDoesNotBreakTheWholeAppBecauseFU = createStore as any;
+const storeCreator = createStore as any;
 
-export const store = createStoreThatDoesNotBreakTheWholeAppBecauseFU(NotificationReducer);
+export const store = storeCreator(NotificationReducer);

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import cx from 'classnames';
 
@@ -13,11 +13,11 @@ class Skeleton extends Component<P, {}> {
     }
 
     render() {
-        const { type, count } = this.props;
+        const {type, count} = this.props;
         const typeClass = `skeleton-${type}`;
         const countArr = new Array(count).fill(0);
 
-        return countArr.map((item, i) => <div key={`skeleton_${type}_${i}`} className={cx('skeleton', typeClass)}></div >);
+        return countArr.map((item, i) => <div key={`skeleton_${type}_${i}`} className={cx('skeleton', typeClass)}/>);
     }
 }
 

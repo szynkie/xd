@@ -26,11 +26,13 @@
       color: $active;
     }
   }
+
   &Inactive {
     &:focus {
       border: 2px solid rgba($fontColor, 0.2);
     }
   }
+
   &Count {
     position: absolute;
     top: (-$spacing-01);

@@ -48,6 +48,7 @@
       background: $border;
     }
   }
+
   &Title {
     @include truncate();
   }

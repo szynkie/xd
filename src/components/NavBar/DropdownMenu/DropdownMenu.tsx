@@ -1,20 +1,20 @@
-import { FaBuilding, FaCrown, FaFileContract, FaRegBuilding, FaUserLock } from 'react-icons/fa';
-import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
-import React, { Component, ReactElement, RefObject } from 'react';
+import {FaBuilding, FaCrown, FaFileContract, FaRegBuilding, FaUserLock} from 'react-icons/fa';
+import {Link, RouteComponentProps, withRouter} from 'react-router-dom';
+import React, {Component, ReactElement, RefObject} from 'react';
 
-import { BiBook } from 'react-icons/bi';
-import { BsPeople } from 'react-icons/bs';
+import {BiBook} from 'react-icons/bi';
+import {BsPeople} from 'react-icons/bs';
 import Button from '../../common/Button/Button';
-import { FiLogOut } from 'react-icons/fi';
-import { IUser } from '../../../utils/Rest';
-import { ImHome } from 'react-icons/im';
+import {FiLogOut} from 'react-icons/fi';
+import {IUser} from '../../../utils/Rest';
+import {ImHome} from 'react-icons/im';
 import Img from '../../common/Img/Img';
-import { IoNewspaperOutline } from 'react-icons/io5';
-import { MdArrowDropDown } from 'react-icons/md';
+import {IoNewspaperOutline} from 'react-icons/io5';
+import {MdArrowDropDown} from 'react-icons/md';
 import RestService from '../../../utils/RestService';
-import { RiUserSettingsFill } from 'react-icons/ri';
+import {RiUserSettingsFill} from 'react-icons/ri';
 import Search from '../../common/Search/Search';
-import { VscQuestion } from 'react-icons/vsc';
+import {VscQuestion} from 'react-icons/vsc';
 import cx from 'classnames';
 import styles from "./DropdownMenu.module.scss";
 
@@ -93,7 +93,9 @@ class DropdownMenu extends Component<RouteComponentProps, S> {
         if (item) {
             const Icon = item.icon;
 
-            return <Link key={`item_${item.name}`} className={cx(disabled ? styles.disabled : null, styles.DropdownMenuItem)} to={disabled ? '#' : item.route} onClick={this.closeDropdown}>
+            return <Link key={`item_${item.name}`}
+                         className={cx(disabled ? styles.disabled : null, styles.DropdownMenuItem)}
+                         to={disabled ? '#' : item.route} onClick={this.closeDropdown}>
                 {Icon}
                 <div>
                     <span>{item.name}</span>
@@ -108,7 +110,7 @@ class DropdownMenu extends Component<RouteComponentProps, S> {
         if (this.state.searchValue !== '') {
             const filterString = this.state.searchValue.toLowerCase();
             itemsFilterd = itemsFilterd.map((element) => {
-                return { ...element, items: element.items.filter((ele) => ele.name.toLowerCase().includes(filterString)) }
+                return {...element, items: element.items.filter((ele) => ele.name.toLowerCase().includes(filterString))}
             })
         }
 
@@ -120,46 +122,46 @@ class DropdownMenu extends Component<RouteComponentProps, S> {
             title: "Platform",
             items: [{
                 name: 'Home',
-                icon: <ImHome />,
+                icon: <ImHome/>,
                 route: '/'
             }, {
                 name: 'Publications',
-                icon: <IoNewspaperOutline />,
+                icon: <IoNewspaperOutline/>,
                 route: '/publications'
             }, {
                 name: 'People',
-                icon: <BsPeople />,
+                icon: <BsPeople/>,
                 route: '/people'
             }, {
                 name: 'Entities',
-                icon: <FaRegBuilding />,
+                icon: <FaRegBuilding/>,
                 route: '/entities'
             }, {
                 name: 'Administration',
-                icon: <FaCrown />,
+                icon: <FaCrown/>,
                 route: '/admin'
             }]
         }, {
             title: "Workspaces",
             items: [{
                 name: 'Client contract',
-                icon: <FaFileContract />,
+                icon: <FaFileContract/>,
                 route: '/clientcontract'
             }, {
                 name: 'Supplier contract',
-                icon: <FaFileContract />,
+                icon: <FaFileContract/>,
                 route: '/supplier'
             }, {
                 name: 'Corporate',
-                icon: <FaBuilding />,
+                icon: <FaBuilding/>,
                 route: '/corpo'
             }, {
                 name: 'Group norms',
-                icon: <BiBook />,
+                icon: <BiBook/>,
                 route: '/groupnorms'
             }, {
                 name: 'Real Estate contracts',
-                icon: <FaFileContract />,
+                icon: <FaFileContract/>,
                 route: '/realestate'
             }]
         }];
@@ -168,15 +170,15 @@ class DropdownMenu extends Component<RouteComponentProps, S> {
             items: [{
                 name: this.state.profile?.name || '',
                 description: 'See profile',
-                icon: <Img className={styles.DropdownMenuUserPhoto} src={this.state.profile?.photo?.thumbnailUrl} />,
+                icon: <Img className={styles.DropdownMenuUserPhoto} src={this.state.profile?.photo?.thumbnailUrl}/>,
                 route: '/profile/1'
             }, {
                 name: 'Privacy',
-                icon: <FaUserLock />,
+                icon: <FaUserLock/>,
                 route: '/privacy'
             }, {
                 name: 'Settings',
-                icon: <RiUserSettingsFill />,
+                icon: <RiUserSettingsFill/>,
                 route: '/settings'
             }]
         };
@@ -188,7 +190,8 @@ class DropdownMenu extends Component<RouteComponentProps, S> {
                     ? item.items.map((el) => this.getMenuItem(el))
                     : <p className="header-4 header-indent">No matches</p>
                 }
-            </div></>);
+            </div>
+        </>);
 
         const accItem = <>
             <h4 className="header-4">{accountItems.title}</h4>
@@ -199,30 +202,31 @@ class DropdownMenu extends Component<RouteComponentProps, S> {
 
         const activeItem = [...menuItems, accountItems].map(v => v.items).flat().find(v => v.route === this.props.location.pathname) || {
             name: 'Unknown',
-            icon: <VscQuestion />,
+            icon: <VscQuestion/>,
             route: '/404'
         };
 
         return (
-            <div className={cx(styles.DropdownMenuContainer)} >
-                <button type="button" className={cx(styles.DropdownMenu, this.state.isListOpen ? styles.open : null)} onClick={(ev) => this.onClick(ev)}>
-                    {this.getMenuItem(activeItem, true)} <MdArrowDropDown />
-                    <span ref={this.ripple} className={styles.ripple}></span>
+            <div className={cx(styles.DropdownMenuContainer)}>
+                <button type="button" className={cx(styles.DropdownMenu, this.state.isListOpen ? styles.open : null)}
+                        onClick={(ev) => this.onClick(ev)}>
+                    {this.getMenuItem(activeItem, true)} <MdArrowDropDown/>
+                    <span ref={this.ripple} className={styles.ripple}/>
                 </button>
                 {this.state.isListOpen &&
-                    <div className={styles.DropdownMenuValues} >
-                        <Search customClass={styles.DropdownMenuSearch} onChange={this.changeSearch} />
-                        <div className={styles.DropdownMenuValuesContainer}>
-                            {items}
-                        </div>
-                        <hr />
-                        {accItem}
-                        <hr />
-                        <Button className={styles.DropdownMenuLogout} label="Logout" icon={FiLogOut} onClick={() => {
-                            this.props.history.push('/404');
-                            this.closeDropdown()
-                        }} />
+                <div className={styles.DropdownMenuValues}>
+                    <Search customClass={styles.DropdownMenuSearch} onChange={this.changeSearch}/>
+                    <div className={styles.DropdownMenuValuesContainer}>
+                        {items}
                     </div>
+                    <hr/>
+                    {accItem}
+                    <hr/>
+                    <Button className={styles.DropdownMenuLogout} label="Logout" icon={FiLogOut} onClick={() => {
+                        this.props.history.push('/404');
+                        this.closeDropdown()
+                    }}/>
+                </div>
                 }
             </div>
         );

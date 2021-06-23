@@ -7,6 +7,7 @@
   margin-top: $spacing-04;
 
   grid-template-columns: 7rem 14rem 14rem;
+
   &Photo {
     display: flex;
     align-items: center;
@@ -53,10 +54,12 @@
     flex-direction: column;
     justify-content: flex-end;
     margin-left: $spacing-04;
+
     p {
       margin: 0;
       padding: 0 $spacing-02;
       border: 2px solid transparent;
+
       &.keyInfo {
         font-weight: 600;
       }

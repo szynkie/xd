@@ -1,8 +1,7 @@
-
-import React, { Component, RefObject } from 'react';
+import React, {Component, RefObject} from 'react';
 import styles from "./Search.module.scss";
 import cx from 'classnames';
-import { ImSearch } from "react-icons/im";
+import {ImSearch} from "react-icons/im";
 
 type S = {
     value: string
@@ -45,13 +44,13 @@ class Search extends Component<P, S> {
     }
 
     render() {
-        const searchHaveValue = this.state.value.length > 0;
-
         return (
             <div className={cx(styles.Search, this.props.customClass)}>
-                <input ref={this.searchInput} type="text" value={this.state.value} placeholder={'Search'} onChange={(ev) => this.onChange(ev)} />
-                <button type="button" className={cx(styles.SearchButton)} onClick={(ev) => this.props.onSearchClick(ev)}>
-                    <ImSearch className={styles.SearchIcon} />
+                <input ref={this.searchInput} type="text" value={this.state.value} placeholder={'Search'}
+                       onChange={(ev) => this.onChange(ev)}/>
+                <button type="button" className={cx(styles.SearchButton)}
+                        onClick={(ev) => this.props.onSearchClick(ev)}>
+                    <ImSearch className={styles.SearchIcon}/>
                 </button>
             </div>
         );

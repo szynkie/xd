@@ -1,11 +1,11 @@
-import { IUser, IUserLocal } from '../../utils/Rest';
-import React, { Component } from 'react';
-import { RouteComponentProps, withRouter } from 'react-router-dom';
+import {IUser, IUserLocal} from '../../utils/Rest';
+import React, {Component} from 'react';
+import {RouteComponentProps, withRouter} from 'react-router-dom';
 
-import { BsBriefcase } from "react-icons/bs";
+import {BsBriefcase} from "react-icons/bs";
 import Button from '../common/Button/Button';
-import { FiMessageCircle } from "react-icons/fi";
-import { HiOutlineDocumentText } from "react-icons/hi";
+import {FiMessageCircle} from "react-icons/fi";
+import {HiOutlineDocumentText} from "react-icons/hi";
 import MainInfo from './MainInfo/MainInfo';
 import RestService from '../../utils/RestService';
 import styles from "./Profile.module.scss";
@@ -21,7 +21,6 @@ type S = {
 
 class Profile extends Component<P, S> {
     service = new RestService();
-    validTemp: any = {};
 
     constructor(props: P) {
         super(props);
@@ -64,14 +63,15 @@ class Profile extends Component<P, S> {
         return profile
             ? <section className={styles.Profile}>
                 <div className={styles.ProfileHeader}>
-                    <Button className={styles.ProfileHeaderButton} label={"Message"} icon={FiMessageCircle} />
-                    <Button className={styles.ProfileHeaderButton} label={"Create a request"} icon={HiOutlineDocumentText} />
-                    <Button className={styles.ProfileHeaderButton} label={"Add to cluster"} icon={BsBriefcase} />
+                    <Button className={styles.ProfileHeaderButton} label={"Message"} icon={FiMessageCircle}/>
+                    <Button className={styles.ProfileHeaderButton} label={"Create a request"}
+                            icon={HiOutlineDocumentText}/>
+                    <Button className={styles.ProfileHeaderButton} label={"Add to cluster"} icon={BsBriefcase}/>
                 </div>
-                <MainInfo profile={profile} changeState={this.changeState} />
+                <MainInfo profile={profile} changeState={this.changeState}/>
             </section>
-            : <div></div>;
+            : <div/>;
     }
 }
 
-export default withRouter(props => <Profile {...props} />);;
+export default withRouter(props => <Profile {...props} />);

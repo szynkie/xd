@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import Img from '../../common/Img/Img';
-import {
-    Link
-} from "react-router-dom";
-import { NotificationState } from '../../../reducers/NotificationReducer';
+import {Link} from "react-router-dom";
+import {NotificationState} from '../../../reducers/NotificationReducer';
 import cx from 'classnames';
-import { formatDate } from './../../../utils/dateUtils';
+import {formatDate} from '../../../utils/dateUtils';
 import styles from "./NavbarNotifications.module.scss";
 
 type P = {
@@ -20,7 +18,8 @@ class NavbarNotifications extends Component<P> {
 
         return notifArray.map((notif, i) =>
             <Link key={`notif_${i}`} className={styles.post} to={`/profile/${i}`}>
-                <Img skeletonize src={notif.user?.photo?.thumbnailUrl} className={styles.postImage} alt={notif.user?.photo?.title} />
+                <Img skeletonize src={notif.user?.photo?.thumbnailUrl} className={styles.postImage}
+                     alt={notif.user?.photo?.title}/>
                 <div>
                     <h5 className={cx(styles.postTitle, 'header-5 firstLetterUpper')}>{notif.title}</h5>
                     <time className={styles.postTime}>{formatDate(notif.time, true)}</time>
@@ -33,7 +32,8 @@ class NavbarNotifications extends Component<P> {
         return (
             <>
                 <div className={styles.NavbarNotifications}>
-                    <h4 className={'header-4'}>You have {this.props.notifications.length} new notification{this.props.notifications.length > 1 ? 's' : ''}</h4>
+                    <h4 className={'header-4'}>You have {this.props.notifications.length} new
+                        notification{this.props.notifications.length > 1 ? 's' : ''}</h4>
                     {this.generateContent()}
                 </div>
             </>

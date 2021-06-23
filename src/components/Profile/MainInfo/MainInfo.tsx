@@ -1,16 +1,17 @@
-import { AnyAction, Dispatch, bindActionCreators } from 'redux';
-import { NotificationActions, NotificationReducer } from '../../../reducers/NotificationReducer';
-import React, { Component } from 'react';
-import { RiBriefcase4Line, RiNewspaperLine } from "react-icons/ri";
-import { VscClose, VscEdit, VscSave } from "react-icons/vsc";
-import { isEqual, set } from 'lodash';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {bindActionCreators, Dispatch} from 'redux';
+import {NotificationActions, NotificationReducer} from '../../../reducers/NotificationReducer';
+import React, {Component} from 'react';
+import {RiBriefcase4Line, RiNewspaperLine} from "react-icons/ri";
+import {VscClose, VscEdit, VscSave} from "react-icons/vsc";
+import {isEqual, set} from 'lodash';
 
 import Button from './../../common/Button/Button';
 import Field from './../../common/Field/Field';
-import { IUserLocal } from './../../../utils/Rest';
+import {IUserLocal} from '../../../utils/Rest';
 import Img from './../../common/Img/Img';
 import RestService from './../../../utils/RestService';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import parentStyles from "./../Profile.module.scss";
 import styles from "./MainInfo.module.scss";
 
@@ -25,7 +26,7 @@ interface IField {
 type P = {
     profile: IUserLocal,
     changeState: Function,
-    dispatch: Dispatch<AnyAction>
+    dispatch: Dispatch
 }
 
 type S = {
@@ -40,7 +41,7 @@ class MainInfo extends Component<P, S> {
     constructor(props: P) {
         super(props);
         this.state = {
-            profile: { ...props.profile },
+            profile: {...props.profile},
             profileBasicEditMode: false
         }
 
@@ -67,12 +68,14 @@ class MainInfo extends Component<P, S> {
         }, () => {
             if (this.state.profile) {
                 console.log(this.props);
-                this.props.dispatch({type: NotificationActions.ADD, payload: {
-                    title:`Profile of ${this.state.profile.name} was updated`,
-                    user: this.state.profile
-                }});
+                this.props.dispatch({
+                    type: NotificationActions.ADD, payload: {
+                        title: `Profile of ${this.state.profile.name} was updated`,
+                        user: this.state.profile
+                    }
+                });
                 this.service.setUserProfile(userId, this.state.profile);
-                this.props.changeState({ profile: this.state.profile });
+                this.props.changeState({profile: this.state.profile});
                 this.validTemp = {};
             }
         })
@@ -81,14 +84,14 @@ class MainInfo extends Component<P, S> {
     cancelEdit() {
         this.setState({
             profileBasicEditMode: false,
-            profile: { ...this.props.profile }
+            profile: {...this.props.profile}
         });
         this.validTemp = {};
     }
 
     onInputChange(val: { value: string, valid?: boolean }, key: string) {
         const newKeys = key.split('.');
-        let newVal = { ...this.state };
+        let newVal = {...this.state};
         if (val.valid !== undefined) {
             this.validTemp[`valid_${key}`] = val.valid;
         }
@@ -99,11 +102,13 @@ class MainInfo extends Component<P, S> {
     createForm(active: boolean, fields: IField[]) {
         if (active) {
             return <form>{fields.map((field, i) =>
-                <Field key={`${field}_${i}`} required customClass={styles.Input} label={field.label} type={field.type} values={field.values} value={field.value} onChange={(e: { value: string, valid: boolean }) => this.onInputChange(e, field.stateKey)} />
+                <Field key={`${field}_${i}`} required customClass={styles.Input} label={field.label} type={field.type}
+                       values={field.values} value={field.value}
+                       onChange={(e: { value: string, valid: boolean }) => this.onInputChange(e, field.stateKey)}/>
             )}</form>
         }
 
-        return fields.map((field, i) => <p key={`staticField_${i}`} >{field.value}</p>)
+        return fields.map((field, i) => <p key={`staticField_${i}`}>{field.value}</p>)
     }
 
     render() {
@@ -151,21 +156,24 @@ class MainInfo extends Component<P, S> {
                 <div className={parentStyles.editHeader}>
                     {this.state.profileBasicEditMode
                         ? <>
-                            <Button iconOnly className={parentStyles.editButton} disabled={isSomeInvalid} icon={VscSave} onClick={() => this.saveBasics()} />
-                            <Button iconOnly className={parentStyles.editButton} icon={VscClose} onClick={this.cancelEdit} />
+                            <Button iconOnly className={parentStyles.editButton} disabled={isSomeInvalid} icon={VscSave}
+                                    onClick={() => this.saveBasics()}/>
+                            <Button iconOnly className={parentStyles.editButton} icon={VscClose}
+                                    onClick={this.cancelEdit}/>
                         </>
-                        : <Button iconOnly className={parentStyles.editButton} icon={VscEdit} onClick={this.editBasics} />}
+                        :
+                        <Button iconOnly className={parentStyles.editButton} icon={VscEdit} onClick={this.editBasics}/>}
                 </div>
                 <div className={styles.MainInfoPhoto}>
                     <div className={styles.MainInfoPhotoCont}>
-                        <Img src={profile?.photo?.url} alt={profile?.photo?.title} />
+                        <Img src={profile?.photo?.url} alt={profile?.photo?.title}/>
                         <div className={styles.Badge}>
                             {profile?.partner === "Contractor"
-                                ? <RiNewspaperLine />
-                                : <RiBriefcase4Line />}
+                                ? <RiNewspaperLine/>
+                                : <RiBriefcase4Line/>}
                         </div>
                     </div>
-                    <Button className={styles.SeeProfile} label={"See profile"} />
+                    <Button className={styles.SeeProfile} label={"See profile"}/>
                 </div>
                 <div className={styles.MainInfoData}>
                     {this.createForm(this.state.profileBasicEditMode, basic1)}
@@ -178,7 +186,7 @@ class MainInfo extends Component<P, S> {
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => {
+const mapDispatchToProps = (dispatch: Dispatch) => {
     return bindActionCreators({
         ...NotificationReducer
     }, dispatch);

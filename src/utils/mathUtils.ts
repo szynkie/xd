@@ -1,4 +1,3 @@
-
 function getRandomNumber(): number {
     const max = 40;
     const min = 1;

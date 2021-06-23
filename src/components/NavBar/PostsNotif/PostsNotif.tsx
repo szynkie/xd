@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { IPost } from './../../../utils/Rest';
+import {IPost} from './../../../utils/Rest';
 import Img from '../../common/Img/Img';
-import {
-    Link
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 import cx from 'classnames';
 import styles from "./PostsNotif.module.scss";
 
@@ -19,7 +17,7 @@ class PostsNotif extends Component<P> {
 
         return postArray.map((post, i) =>
             <Link key={`notifPost_${i}`} className={styles.post} to={`/${i}`}>
-                <Img skeletonize src={post.photo?.thumbnailUrl} className={styles.postImage} alt={post.photo?.title} />
+                <Img skeletonize src={post.photo?.thumbnailUrl} className={styles.postImage} alt={post.photo?.title}/>
                 <div>
                     <h5 className={cx(styles.postTitle, 'header-5 firstLetterUpper')}>{post.title}</h5>
                     <p className={cx(styles.postContent, 'firstLetterUpper')}>{post.body}</p>

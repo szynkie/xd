@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import Publications from './Publications/Publications';
 import Work from '../Work/Work';
