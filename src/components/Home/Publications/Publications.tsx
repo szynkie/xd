@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import {IPost} from '../../../utils/Rest';
 import Img from '../../common/Img/Img';
-import {Link} from "react-router-dom";
 import RestService from '../../../utils/RestService';
 import Skeleton from './../../common/Skeleton/Skeleton';
 import UserSignature from './../../common/UserSignature/UserSignature';
@@ -63,9 +62,9 @@ class Publications extends Component<{}, S> {
             <section className={styles.Publications}>
                 {this.getFirstPostTile()}
                 <div className={styles.PublicationsContainer}>
-                    <h2 className={'header-2'}>Latest publications</h2>
+                    <h2 className={'header-2'}>Publications</h2>
                     {this.getPosts()}
-                    <Link className={styles.PublicationsMore} to='/'>See more publications</Link>
+                    
                 </div>
             </section>
         );

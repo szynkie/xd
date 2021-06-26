@@ -1,4 +1,6 @@
-import {IComment, IPhoto, IPost, IUser} from "./Rest";
+import {IComment, IPhoto, IPost, IUser, IWorkspace} from "./Rest";
+
+import workspaces from './../assets/workspaces.json'
 
 const API = 'https://jsonplaceholder.typicode.com';
 
@@ -83,6 +85,13 @@ class RestService {
             .then((response) => {
                 return RestService._statusToText(response.status);
             })
+    }
+     getWorkspace(id: number): IWorkspace | undefined {
+        return workspaces.find((v) => v.id === id);
+    }
+
+    getWorkspaces(): IWorkspace[] {
+        return workspaces;
     }
 }
 

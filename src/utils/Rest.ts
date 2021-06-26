@@ -57,3 +57,11 @@ export interface IComment {
     user?: IUser
     post?: IPost
 }
+export interface IWorkspace {
+    id: number,
+    title: string,
+    type: string,
+    users: number,
+    lastUpdate: string,
+    background: string
+}

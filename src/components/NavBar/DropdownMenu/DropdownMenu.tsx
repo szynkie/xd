@@ -1,15 +1,17 @@
-import {FaBuilding, FaCrown, FaFileContract, FaRegBuilding, FaUserLock} from 'react-icons/fa';
+import {FaBuilding, FaCrown, FaFileContract, FaUserLock} from 'react-icons/fa';
 import {Link, RouteComponentProps, withRouter} from 'react-router-dom';
 import React, {Component, ReactElement, RefObject} from 'react';
 
-import {BiBook} from 'react-icons/bi';
-import {BsPeople} from 'react-icons/bs';
+
+import {ImHome3} from "react-icons/im";
+
 import Button from '../../common/Button/Button';
 import {FiLogOut} from 'react-icons/fi';
+import {FaUniversity,FaBook} from 'react-icons/fa';
 import {IUser} from '../../../utils/Rest';
-import {ImHome} from 'react-icons/im';
 import Img from '../../common/Img/Img';
-import {IoNewspaperOutline} from 'react-icons/io5';
+import {IoBookSharp} from 'react-icons/io5';
+import {IoMdPeople} from 'react-icons/io';
 import {MdArrowDropDown} from 'react-icons/md';
 import RestService from '../../../utils/RestService';
 import {RiUserSettingsFill} from 'react-icons/ri';
@@ -122,19 +124,19 @@ class DropdownMenu extends Component<RouteComponentProps, S> {
             title: "Platform",
             items: [{
                 name: 'Home',
-                icon: <ImHome/>,
+                icon: <ImHome3/>,
                 route: '/'
             }, {
                 name: 'Publications',
-                icon: <IoNewspaperOutline/>,
+                icon: <IoBookSharp/>,
                 route: '/publications'
             }, {
                 name: 'People',
-                icon: <BsPeople/>,
+                icon: <IoMdPeople/>,
                 route: '/people'
             }, {
                 name: 'Entities',
-                icon: <FaRegBuilding/>,
+                icon: <FaUniversity/>,
                 route: '/entities'
             }, {
                 name: 'Administration',
@@ -157,7 +159,7 @@ class DropdownMenu extends Component<RouteComponentProps, S> {
                 route: '/corpo'
             }, {
                 name: 'Group norms',
-                icon: <BiBook/>,
+                icon: <FaBook/>,
                 route: '/groupnorms'
             }, {
                 name: 'Real Estate contracts',

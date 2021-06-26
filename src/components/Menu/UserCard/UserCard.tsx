@@ -1,11 +1,11 @@
-import {IoAdd, IoNewspaperOutline} from 'react-icons/io5'
-import {IoIosPeople, IoMdPersonAdd} from 'react-icons/io'
+import {IoAdd, IoBookSharp} from 'react-icons/io5'
+import {IoMdPeople, IoMdAdd} from 'react-icons/io'
 import {Link, RouteComponentProps, withRouter} from 'react-router-dom';
 import React, {Component} from 'react';
 
 import Button from '../../common/Button/Button';
-import {FaRegBuilding} from 'react-icons/fa'
-import {GiAtom} from 'react-icons/gi'
+import {FaUniversity} from 'react-icons/fa'
+import {GiWindTurbine} from 'react-icons/gi'
 import {IUser} from '../../../utils/Rest';
 import Img from '../../common/Img/Img';
 import RestService from '../../../utils/RestService';
@@ -51,20 +51,20 @@ class UserCard extends Component<RouteComponentProps, S> {
                     </Link>
                     <hr className={styles.UserCardHr}/>
                     <div className={styles.UserCardButtons}>
-                        <Button className={styles.ButtonFull} label="Your network" icon={IoIosPeople}
+                        <Button className={styles.ButtonFull} label="Your network" icon={IoMdPeople}
                                 onClick={() => this.goTo('/404')}/>
-                        <Button iconOnly icon={IoMdPersonAdd} border/>
-                        <Button className={styles.ButtonFull} label="Your publications" icon={IoNewspaperOutline}
+                        <Button iconOnly icon={IoMdAdd} border/>
+                        <Button className={styles.ButtonFull} label="Your publications" icon={IoBookSharp}
                                 onClick={() => this.goTo('/404')}/>
                         <Button iconOnly icon={IoAdd} border/>
                     </div>
                 </div>
                 <div className={styles.UserTransparent}>
-                    <Button className={styles.Button} label="Publications" icon={IoNewspaperOutline}
+                    <Button className={styles.Button} label="Publications" icon={IoBookSharp}
                             onClick={() => this.goTo('/404')}/>
-                    <Button className={styles.Button} label="Ecosystem" icon={GiAtom}
+                    <Button className={styles.Button} label="Ecosystem" icon={GiWindTurbine}
                             onClick={() => this.goTo('/404')}/>
-                    <Button className={styles.Button} label="Your Entities" icon={FaRegBuilding}
+                    <Button className={styles.Button} label="Your Entities" icon={FaUniversity}
                             onClick={() => this.goTo('/entities')}/>
                 </div>
             </>

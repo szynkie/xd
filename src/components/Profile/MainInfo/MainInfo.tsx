@@ -2,7 +2,7 @@
 import {bindActionCreators, Dispatch} from 'redux';
 import {NotificationActions, NotificationReducer} from '../../../reducers/NotificationReducer';
 import React, {Component} from 'react';
-import {RiBriefcase4Line, RiNewspaperLine} from "react-icons/ri";
+import {RiBriefcase5Line, RiNewspaperFill} from "react-icons/ri";
 import {VscClose, VscEdit, VscSave} from "react-icons/vsc";
 import {isEqual, set} from 'lodash';
 
@@ -169,8 +169,8 @@ class MainInfo extends Component<P, S> {
                         <Img src={profile?.photo?.url} alt={profile?.photo?.title}/>
                         <div className={styles.Badge}>
                             {profile?.partner === "Contractor"
-                                ? <RiNewspaperLine/>
-                                : <RiBriefcase4Line/>}
+                                ? <RiNewspaperFill/>
+                                : <RiBriefcase5Line/>}
                         </div>
                     </div>
                     <Button className={styles.SeeProfile} label={"See profile"}/>

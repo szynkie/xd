@@ -86,7 +86,7 @@ class Work extends Component<{}, S> {
         return (
             <section className={styles.Work}>
                 <div className={styles.WorkHeader}>
-                    <h2 className={'header-2 header-indent'}>Latest publications</h2>
+                    <h2 className={'header-2 header-indent'}>Works</h2>
                     <div className={styles.WorkHeaderActions}>
                         <Search onChange={this.changeSearch}/>
                     </div>

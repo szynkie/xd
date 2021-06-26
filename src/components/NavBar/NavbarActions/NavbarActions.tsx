@@ -1,4 +1,4 @@
-import {ImBell, ImBubbles, ImHome} from "react-icons/im";
+import {ImEnvelop, ImBubble, ImHome3} from "react-icons/im";
 import React, {Component} from 'react';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
 
@@ -56,10 +56,10 @@ class NavbarActions extends Component<P, S> {
         return (
             <>
                 <div className={styles.NavbarActions}>
-                    <ActionButton className={styles.actionBtn} icon={ImHome}
+                    <ActionButton className={styles.actionBtn} icon={ImHome3}
                                   disabled={this.props.location.pathname === '/'} onClick={this.goToHome}/>
-                    <ActionButton className={styles.actionBtn} icon={ImBubbles} disabled/>
-                    <ActionButton className={styles.actionBtn} icon={ImBell} disabled={notifications.length === 0}
+                    <ActionButton className={styles.actionBtn} icon={ImBubble} disabled/>
+                    <ActionButton className={styles.actionBtn} icon={ImEnvelop} disabled={notifications.length === 0}
                                   actions={notifications.length} onClick={this.openPostsNotif}/>
                 </div>
                 {this.state.postsVisible && <NavbarNotifications notifications={notifications}/>}
