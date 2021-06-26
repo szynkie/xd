@@ -33,7 +33,7 @@ class RestService {
 
     async getUserProfile(id?: number): Promise<IUser> {
         const user: IUser = await fetch(`${API}/users/${id}`).then(response => response.json());
-        user.photo = await this.getUserPhoto(user.id);
+        user.photo = await this.getUserPhoto(user.id+3);
 
         return user;
     }

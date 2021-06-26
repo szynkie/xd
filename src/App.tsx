@@ -9,6 +9,7 @@ import Profile from "./components/Profile/Profile";
 import {Provider} from 'react-redux';
 import React from 'react';
 import {store} from './store';
+import TestPage from './components/TestPage/TestPage';
 
 const routes = [
     {
@@ -19,6 +20,10 @@ const routes = [
     {
         path: "/profile/:userId",
         component: Profile
+    },
+    {
+    path: "/*",
+    component: TestPage
     }
 ];
 

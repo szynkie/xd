@@ -23,7 +23,7 @@ class Publications extends Component<{}, S> {
 
     componentDidMount() {
         const service = new RestService();
-        service.getPublications(4).then(posts => {
+        service.getPublications(5).then(posts => {
             this.setState({
                 posts: posts
             })
@@ -55,7 +55,7 @@ class Publications extends Component<{}, S> {
                     <h3 className={'header-3 firstLetterUpper'}>{post.title}</h3>
                     <UserSignature onWhiteBg name={post.user?.name} imageSrc={post.photo?.thumbnailUrl}/>
                 </div>
-            </article>) : <Skeleton type="article" count={3}/>);
+            </article>) : <Skeleton type="article" count={4}/>);
     }
 
     render() {

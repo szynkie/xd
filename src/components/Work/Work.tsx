@@ -9,7 +9,7 @@ import WorkTile from '../common/WorkTile/WorkTile';
 import styles from "./Work.module.scss";
 
 const PAGE_SIZE = 5;
-const WORKS_LIMIT = 60;
+const WORKS_LIMIT = 50;
 
 type S = {
     works: Array<IComment> | null,
@@ -75,7 +75,7 @@ class Work extends Component<{}, S> {
             ? filteredWorks.slice(range, range + PAGE_SIZE).map((work) =>
                 <WorkTile key={`work_${work.id}`} work={work}/>)
             : !this.state.works && filteredWorks.length === 0
-                ? <Skeleton type="work" count={10}/>
+                ? <Skeleton type="work" count={5}/>
                 : <h4 className={'header-2 header-indent'}>No matches</h4>);
     }
 
