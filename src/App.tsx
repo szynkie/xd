@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import Home from './components/Home/Home';
 import Menu from './components/Menu/Menu';
-import Navbar from './components/Navbar/Navbar';
+import Navbar from './components/NavBar/NavBar';
 import Profile from "./components/Profile/Profile";
 import {Provider} from 'react-redux';
 import React from 'react';
