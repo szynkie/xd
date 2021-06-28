@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/xd_ReactBusinessSite/static/css/main.a604ca21.chunk.css",
+    "main.js": "/xd_ReactBusinessSite/static/js/main.2ff02892.chunk.js",
+    "main.js.map": "/xd_ReactBusinessSite/static/js/main.2ff02892.chunk.js.map",
+    "runtime-main.js": "/xd_ReactBusinessSite/static/js/runtime-main.11292135.js",
+    "runtime-main.js.map": "/xd_ReactBusinessSite/static/js/runtime-main.11292135.js.map",
+    "static/js/2.86c8fa59.chunk.js": "/xd_ReactBusinessSite/static/js/2.86c8fa59.chunk.js",
+    "static/js/2.86c8fa59.chunk.js.map": "/xd_ReactBusinessSite/static/js/2.86c8fa59.chunk.js.map",
+    "static/js/3.dd369c32.chunk.js": "/xd_ReactBusinessSite/static/js/3.dd369c32.chunk.js",
+    "static/js/3.dd369c32.chunk.js.map": "/xd_ReactBusinessSite/static/js/3.dd369c32.chunk.js.map",
+    "index.html": "/xd_ReactBusinessSite/index.html",
+    "static/css/main.a604ca21.chunk.css.map": "/xd_ReactBusinessSite/static/css/main.a604ca21.chunk.css.map",
+    "static/js/2.86c8fa59.chunk.js.LICENSE.txt": "/xd_ReactBusinessSite/static/js/2.86c8fa59.chunk.js.LICENSE.txt",
+    "static/media/react-logo.8a93330b.png": "/xd_ReactBusinessSite/static/media/react-logo.8a93330b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.11292135.js",
+    "static/js/2.86c8fa59.chunk.js",
+    "static/css/main.a604ca21.chunk.css",
+    "static/js/main.2ff02892.chunk.js"
+  ]
+}
